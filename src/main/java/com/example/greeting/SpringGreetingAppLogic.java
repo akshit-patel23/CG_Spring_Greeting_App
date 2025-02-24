@@ -29,6 +29,16 @@ public class SpringGreetingAppLogic {
 
 
 
+    private final GreetingService greetingService;
+    @GetMapping("/")
+    public String message(){
+        return greetingService.getGreeting();
+    }
+    @Autowired
+    public SpringGreetingAppLogic(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
 
 
 }
